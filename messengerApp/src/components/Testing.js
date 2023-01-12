@@ -1,16 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { Image } from 'react-native'
 
-const ChatsScreen = () => {
+const Testing = () => {
     return (
         <View>
-
-            <Text>ChatsScreen</Text>
+            <Text>Testing</Text>
         </View>
     )
 }
 
-export default ChatsScreen
+export default Testing
 
 const styles = StyleSheet.create({})
