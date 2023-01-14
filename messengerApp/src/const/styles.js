@@ -16,7 +16,8 @@ export const GlobalStyles = {
         greyOne: '#dcdcdd',
         greyThree: '#e6e8e6',
         greyFour: '#e9ecef',
-        greyFive: '#adb5bd'
+        greyFive: '#adb5bd',
+        greySix: '#e5e5e5'
 
 
 

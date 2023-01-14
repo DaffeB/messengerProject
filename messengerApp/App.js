@@ -1,13 +1,9 @@
-
 import React from 'react';
 
 import {
   SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
   TouchableOpacity
 } from 'react-native';
@@ -24,7 +20,6 @@ import SettingsScreen from './src/screens/BottomTabNavigatorScreens/SettingsScre
 import PeopleScreen from './src/screens/BottomTabNavigatorScreens/PeopleScreen';
 import { GlobalStyles } from './src/const/styles';
 import { Image } from 'react-native';
-
 
 
 const Stack = createNativeStackNavigator()
@@ -58,8 +53,7 @@ const ScreensTabs = () => {
             style={{ width: 35, height: 35, marginLeft: 16, marginTop: 16, marginBottom: 16 }} />,
 
           headerRight: ({ color, focused }) =>
-
-            // <Testing />
+            //Profile photo
             <TouchableOpacity>
 
               <Image

@@ -12,10 +12,11 @@ const SearchBar = () => {
                 <Image style={{ width: 20, height: 20, marginLeft: 10, marginRight: 5 }} source={require('../assets/images/search.png')} />
                 <TextInput
                     placeholder='Serach'
+                    clearTextOnFocus={true}
                 />
             </View>
         </View>
-
+        // importer in Chat Screen 
 
     );
 }
