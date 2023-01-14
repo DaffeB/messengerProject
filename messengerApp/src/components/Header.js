@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import SearchBar from './SearchBar'
 
 
 const Header = () => {
     return (
         <View>
-            <Text>Headerr</Text>
+            <Text>Header</Text>
         </View>
     )
 }

@@ -9,6 +9,7 @@ import {
   Text,
   useColorScheme,
   View,
+  TouchableOpacity
 } from 'react-native';
 
 
@@ -23,7 +24,7 @@ import SettingsScreen from './src/screens/BottomTabNavigatorScreens/SettingsScre
 import PeopleScreen from './src/screens/BottomTabNavigatorScreens/PeopleScreen';
 import { GlobalStyles } from './src/const/styles';
 import { Image } from 'react-native';
-import Testing from './src/components/Testing';
+
 
 
 const Stack = createNativeStackNavigator()
@@ -34,9 +35,6 @@ const ScreensTabs = () => {
   return (
     <BottomTabs.Navigator screenOptions={{
       headerStyle: { backgroundColor: GlobalStyles.colors.white, height: 100 }
-
-
-
     }}
 
     >
@@ -46,28 +44,68 @@ const ScreensTabs = () => {
 
 
           tabBarLabel: 'Messages',
+          tabBarLabel: ({ focused, color, fontSize }) => (
+            <Text style={{
+              color: focused ? GlobalStyles.colors.greenFive : GlobalStyles.colors.greyFive,
+              fontSize: focused ? 14 : 12
+
+            }
+
+
+            }>Messages</Text>
+          ),
           headerLeft: () => <Image source={require('./src/assets/images/cat.png')}
             style={{ width: 35, height: 35, marginLeft: 16, marginTop: 16, marginBottom: 16 }} />,
-          headerRight: () =>
-            <Image
 
-              source={require('./src/assets/images/edit.png')} style={{ width: 20, height: 20, marginRight: 16, marginTop: 16, marginBottom: 16 }} />
-          ,
-          tabBarIcon: () =>
+          headerRight: ({ color, focused }) =>
+
+            // <Testing />
+            <TouchableOpacity>
+
+              <Image
+
+                source={require('./src/assets/images/edit.png')} style={{ width: 20, height: 20, marginRight: 16, marginTop: 16, marginBottom: 16, tintColor: GlobalStyles.colors.greenSix }} />
+
+            </TouchableOpacity>,
+          tabBarIcon: ({ focused }) =>
+
             <Image
               source={require('./src/assets/images/bubbleMessages.png')}
-              style={{ width: 20, height: 20 }}
+              style={{
+                width: focused ? 23 : 20,
+                height: focused ? 23 : 20,
+                tintColor: focused ? GlobalStyles.colors.greenFive : 'black',
+              }}
+            // style={{ width: 20, height: 20 }}
 
             />
+
+
         }} />
       <BottomTabs.Screen name='Calls Screen' component={CallsScreen}
         options={{
-          title: 'Calls',
+
           tabBarLabel: 'Calls',
-          tabBarIcon: () =>
+          tabBarLabel: ({ focused, color, fontSize }) => (
+            <Text style={{
+              color: focused ? GlobalStyles.colors.greenFive : GlobalStyles.colors.greyFive,
+              fontSize: focused ? 14 : 12
+
+            }
+
+
+
+
+            }>Calls</Text>
+          ),
+          tabBarIcon: ({ focused }) =>
             <Image
               source={require('./src/assets/images/telephone.png')}
-              style={{ width: 20, height: 20 }}
+              style={{
+                width: focused ? 23 : 20,
+                height: focused ? 23 : 20,
+                tintColor: focused ? GlobalStyles.colors.greenFive : 'black',
+              }}
             />
         }} />
 
@@ -75,10 +113,23 @@ const ScreensTabs = () => {
         options={{
           title: 'Friends',
           tabBarLabel: 'People',
-          tabBarIcon: () =>
+          tabBarLabel: ({ focused, color, fontSize }) => (
+            <Text style={{
+              color: focused ? GlobalStyles.colors.greenFive : GlobalStyles.colors.greyFive,
+              fontSize: focused ? 14 : 12
+
+            }
+
+            }>People</Text>
+          ),
+          tabBarIcon: ({ focused }) =>
             <Image
               source={require('./src/assets/images/people.png')}
-              style={{ width: 20, height: 20 }}
+              style={{
+                width: focused ? 23 : 20,
+                height: focused ? 23 : 20,
+                tintColor: focused ? GlobalStyles.colors.greenFive : 'black',
+              }}
             />,
           headerLeft: () => {
             return <Image style={{ width: 35, height: 35, marginLeft: 16, marginTop: 16, marginBottom: 16 }} source={require('./src/assets/images/cat.png')} />
@@ -91,10 +142,26 @@ const ScreensTabs = () => {
         options={{
           title: 'Settings',
           tabBarLabel: 'Settings',
-          tabBarIcon: () =>
+          tabBarLabel: ({ focused, color, fontSize }) => (
+            <Text style={{
+              color: focused ? GlobalStyles.colors.greenFive : GlobalStyles.colors.greyFive,
+              fontSize: focused ? 14 : 12
+
+            }
+
+
+
+
+            }>Settings</Text>
+          ),
+          tabBarIcon: ({ focused }) =>
             <Image
               source={require('./src/assets/images/settings.png')}
-              style={{ width: 20, height: 20 }}
+              style={{
+                width: focused ? 23 : 20,
+                height: focused ? 23 : 20,
+                tintColor: focused ? GlobalStyles.colors.greenFive : 'black',
+              }}
             />
         }}
 
@@ -107,24 +174,19 @@ const ScreensTabs = () => {
 
 const App = () => {
   return (
+
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="ScreensTabs" component={ScreensTabs}
           options={{
             headerShown: false,
-
           }}
-
-        // options={{
-        //   headerLeft: () => {
-        //     return <Image style={{ width: 20, height: 20 }} source={require('./src/assets/images/cat.png')} />
-
-        //   }
-        // }}
         />
         <Stack.Screen name="Header" component={Header} />
       </Stack.Navigator>
     </NavigationContainer>
+
+
   );
 };
 

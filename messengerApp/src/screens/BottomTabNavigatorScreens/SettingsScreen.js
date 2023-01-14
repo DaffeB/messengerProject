@@ -3,7 +3,7 @@ import React from 'react'
 
 const SettingsScreen = () => {
     return (
-        <View>
+        <View style={{ backgroundColor: 'white', height: '100%' }} >
             <Text>Screen</Text>
         </View>
     )

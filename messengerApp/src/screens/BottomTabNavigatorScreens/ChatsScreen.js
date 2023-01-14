@@ -1,12 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Image } from 'react-native'
+import SearchBar from '../../components/SearchBar'
+
 
 const ChatsScreen = () => {
     return (
-        <View>
+        <View style={{ backgroundColor: 'white', height: '100%' }} >
+            <SearchBar />
 
-            <Text>ChatsScreen</Text>
         </View>
     )
 }
