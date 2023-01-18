@@ -8,7 +8,6 @@ const CallsScreen = () => {
     return (
         <View style={{ backgroundColor: 'white', height: '100%' }} >
             <SearchBar />
-
         </View>
     )
 }

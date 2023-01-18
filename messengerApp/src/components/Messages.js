@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Image } from 'react-native';
 import { GlobalStyles } from '../const/styles';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 const DATA = [
 
@@ -22,7 +23,7 @@ const DATA = [
     },
     {
         id: 3,
-        username: "Pressy",
+        username: "Tifanny",
         img: require('../assets/images/usersMessages/woma2.png'),
         text: "Gotta you",
         timeOfMessage: '2h'
@@ -81,8 +82,8 @@ const DATA = [
 
 
 
-const Messages = () => {
-
+const Messages = ({ route }) => {
+    const navigation = useNavigation();
 
     return (
 
@@ -100,21 +101,29 @@ const Messages = () => {
                             </View>
                             <View>
 
-                                <Text style={{ color: 'black', marginTop: 5, fontWeight: '500', fontSize: 16 }}>{item.username}</Text>
-                                <View style={{ flexDirection: 'row', fontSize: 14, lineHeight: 25 }}>
-                                    <Text style={{ fontWeight: '300', marginRight: 10 }}>{item.text}</Text>
-                                    <Text style={{ fontWeight: '300', color: GlobalStyles.colors.greyFive }}>{item.timeOfMessage}</Text>
-                                </View>
+                                <TouchableOpacity title="FriendsMessages"
+                                    onPress={() => navigation.navigate('FriendsMessages')}>
+                                    <Text style={{ color: 'black', marginTop: 5, fontWeight: '500', fontSize: 16 }}>{item.username}</Text>
+                                    <View style={{ flexDirection: 'row', fontSize: 14, lineHeight: 25 }}>
+                                        <Text style={{ fontWeight: '300', marginRight: 10 }}>{item.text}</Text>
+                                        <Text style={{ fontWeight: '300', color: GlobalStyles.colors.greyFive }}>{item.timeOfMessage}</Text>
+                                    </View>
+
+                                </TouchableOpacity>
 
                             </View>
 
+
+
                         </View>
+
+
                     )
                 }}
                 keyExtractor={item => item.id}
 
             />
-        </View>
+        </View >
 
     );
 };
@@ -123,3 +132,22 @@ const Messages = () => {
 export default Messages
 
 const styles = StyleSheet.create({})
+
+
+
+// import { useNavigation } from '@react-navigation/native';
+
+// function ChatList({ users }) {
+//     const navigation = useNavigation();
+
+//     return (
+//         <FlatList
+//             data={users}
+//             renderItem={({ item }) => (
+//                 <TouchableOpacity onPress={() => navigation.navigate('Messages', { userId: item.id })}>
+//                     <Text>{item.name}</Text>
+//                 </TouchableOpacity>
+//             )}
+//         />
+//     );
+// }

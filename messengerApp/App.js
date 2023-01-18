@@ -20,6 +20,7 @@ import SettingsScreen from './src/screens/BottomTabNavigatorScreens/SettingsScre
 import PeopleScreen from './src/screens/BottomTabNavigatorScreens/PeopleScreen';
 import { GlobalStyles } from './src/const/styles';
 import { Image } from 'react-native';
+import FriendsMessages from './src/screens/FriendsMessages';
 
 
 const Stack = createNativeStackNavigator()
@@ -177,6 +178,7 @@ const App = () => {
           }}
         />
         <Stack.Screen name="Header" component={Header} />
+        <Stack.Screen name="FriendsMessages" component={FriendsMessages} />
       </Stack.Navigator>
     </NavigationContainer>
 
