@@ -90,7 +90,8 @@ const Messages = ({ route }) => {
         <View>
             <FlatList
                 data={DATA}
-                horizontal={false}
+
+                style={{ height: '77%' }}
                 renderItem={({ item }) => {
                     return (
 
@@ -101,8 +102,11 @@ const Messages = ({ route }) => {
                             </View>
                             <View>
 
-                                <TouchableOpacity title="FriendsMessages"
+                                <TouchableOpacity
+
                                     onPress={() => navigation.navigate('FriendsMessages')}>
+
+
                                     <Text style={{ color: 'black', marginTop: 5, fontWeight: '500', fontSize: 16 }}>{item.username}</Text>
                                     <View style={{ flexDirection: 'row', fontSize: 14, lineHeight: 25 }}>
                                         <Text style={{ fontWeight: '300', marginRight: 10 }}>{item.text}</Text>
@@ -123,6 +127,7 @@ const Messages = ({ route }) => {
                 keyExtractor={item => item.id}
 
             />
+            <View><TouchableOpacity><Text>hahaaaaaaaaaaaaaaa</Text></TouchableOpacity></View>
         </View >
 
     );

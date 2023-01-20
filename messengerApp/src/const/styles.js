@@ -7,6 +7,7 @@ export const GlobalStyles = {
         greenFive: '#59c9a5',
         greenSix: '#80ed99',
         greenSeven: '#136f63',
+        greenEight: '#cbf3f0',
         blueOne: '#42a5f5',
         blueTwo: '#00bbf9',
         blueThree: '#9bf6ff',

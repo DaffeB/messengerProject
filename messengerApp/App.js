@@ -5,7 +5,9 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity
+  TouchableOpacity,
+  Pressable,
+  Button
 } from 'react-native';
 
 
@@ -18,6 +20,7 @@ import ChatsScreen from './src/screens/BottomTabNavigatorScreens/ChatsScreen';
 import CallsScreen from './src/screens/BottomTabNavigatorScreens/CallsScreen';
 import SettingsScreen from './src/screens/BottomTabNavigatorScreens/SettingsScreen';
 import PeopleScreen from './src/screens/BottomTabNavigatorScreens/PeopleScreen';
+import BackButtonHeader from './src/const/BackButtonHeader';
 import { GlobalStyles } from './src/const/styles';
 import { Image } from 'react-native';
 import FriendsMessages from './src/screens/FriendsMessages';
@@ -52,6 +55,7 @@ const ScreensTabs = () => {
           ),
           headerLeft: () => <Image source={require('./src/assets/images/cat.png')}
             style={{ width: 35, height: 35, marginLeft: 16, marginTop: 16, marginBottom: 16 }} />,
+
 
           headerRight: ({ color, focused }) =>
             //Profile photo
@@ -171,16 +175,27 @@ const App = () => {
   return (
 
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{
+        headerShown: false
+      }}>
         <Stack.Screen name="ScreensTabs" component={ScreensTabs}
-          options={{
-            headerShown: false,
-          }}
+
         />
-        <Stack.Screen name="Header" component={Header} />
-        <Stack.Screen name="FriendsMessages" component={FriendsMessages} />
+        <Stack.Screen name="Header" component={Header}
+
+        />
+        <Stack.Screen name="FriendsMessages" component={FriendsMessages}
+
+          options={{
+            headerShown: true,
+
+            headerLeft: () =>
+              <BackButtonHeader />
+          }}
+
+        />
       </Stack.Navigator>
-    </NavigationContainer>
+    </NavigationContainer >
 
 
   );
