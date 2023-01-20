@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Text, FlatList, TextInput, Pressable, Button } from 'react-native';
 import { Image } from 'react-native';
+import MessageInputField from '../const/MessageInputField';
 import { GlobalStyles } from '../const/styles';
 import MessageBuilder from './MessageBuliders';
 
@@ -42,22 +43,22 @@ const CHAT_MESSAGES_TWO = [
 
 const FriendsMessages = () => {
 
-    const [inputValue, setInputValue] = useState('');
+    // const [inputValue, setInputValue] = useState('');
     const [messages, setMessages] = useState(CHAT_MESSAGES_TWO);
 
-    const onChangeNewMessage = (newMessage) => {
-        setInputValue(newMessage);
-    }
+    // const onChangeNewMessage = (newMessage) => {
+    //     setInputValue(newMessage);
+    // }
 
-    const onPressSend = () => {
-        console.log(inputValue);
-        setMessages([...messages, {
-            id: myProfileId,
-            username: myUsername,
-            message: inputValue
-        }]);
-        setInputValue('');
-    }
+    // const onPressSend = () => {
+    //     console.log(inputValue);
+    //     setMessages([...messages, {
+    //         id: myProfileId,
+    //         username: myUsername,
+    //         message: inputValue
+    //     }]);
+    //     setInputValue('');
+    // }
 
     // useEffect(() => {
     //     if (messages[messages.length - 1].id === 1) {
@@ -69,7 +70,7 @@ const FriendsMessages = () => {
     //     }
     // }, [messages]);
 
-    console.log(messages);
+    // console.log(messages);
     return (
         <View>
             <FlatList
@@ -83,19 +84,9 @@ const FriendsMessages = () => {
                 }}
                 keyExtractor={item => item.id}
             />
-            <View style={{ borderWidth: 1, flexDirection: 'row' }}>
+            <View>
 
-                <TextInput
-                    placeholder="Message"
-                    style={{ borderWidth: 1, width: '80%' }}
-                    onChangeText={onChangeNewMessage}
-                    value={inputValue}
-                />
-                <Button
-                    style={{ width: '5%', borderWidth: 1 }}
-                    title="Send"
-                    onPress={onPressSend}
-                />
+                <MessageInputField />
             </View>
 
         </View>
