@@ -29,6 +29,38 @@ import FriendsMessages from './src/screens/FriendsMessages';
 const Stack = createNativeStackNavigator()
 const BottomTabs = createBottomTabNavigator()
 
+const App = () => {
+  return (
+    <>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{
+          headerShown: false
+        }}>
+          <Stack.Screen name="ScreensTabs" component={ScreensTabs}
+
+          />
+          <Stack.Screen name="Header" component={Header}
+
+          />
+          <Stack.Screen name="FriendsMessages" component={FriendsMessages}
+
+            options={{
+              headerShown: true,
+
+              headerLeft: () =>
+                <BackButtonHeader />
+            }}
+
+          />
+        </Stack.Navigator>
+      </NavigationContainer >
+    </>
+
+
+
+  );
+};
+
 
 const ScreensTabs = () => {
   return (
@@ -171,35 +203,7 @@ const ScreensTabs = () => {
 
 
 
-const App = () => {
-  return (
 
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{
-        headerShown: false
-      }}>
-        <Stack.Screen name="ScreensTabs" component={ScreensTabs}
-
-        />
-        <Stack.Screen name="Header" component={Header}
-
-        />
-        <Stack.Screen name="FriendsMessages" component={FriendsMessages}
-
-          options={{
-            headerShown: true,
-
-            headerLeft: () =>
-              <BackButtonHeader />
-          }}
-
-        />
-      </Stack.Navigator>
-    </NavigationContainer >
-
-
-  );
-};
 
 const styles = StyleSheet.create({
 

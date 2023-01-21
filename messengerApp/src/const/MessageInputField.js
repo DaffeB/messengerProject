@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View, TextInput } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CHAT_MESSAGES_TWO from '../screens/FriendsMessages'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const myUsername = "Aley";
+const myProfileId = 1;
 
 const MessageInputField = () => {
     const [inputValue, setInputValue] = useState('');
@@ -12,6 +13,8 @@ const MessageInputField = () => {
     const onChangeNewMessage = (newMessage) => {
         setInputValue(newMessage);
     }
+
+
 
     const onPressSend = () => {
         console.log(inputValue);
@@ -31,7 +34,7 @@ const MessageInputField = () => {
                 value={inputValue}
             />
             <TouchableOpacity
-                style={{ width: '5%', borderWidth: 1 }}
+                style={{ width: '5%', borderWidth: 1, backgroundColor: 'red' }}
                 title="Send"
                 onPress={onPressSend}
             />

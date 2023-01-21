@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { StyleSheet, View, Text, FlatList, TextInput, Pressable, Button } from 'react-native';
 import { Image } from 'react-native';
+import BackButtonHeader from '../const/BackButtonHeader';
 import MessageInputField from '../const/MessageInputField';
 import { GlobalStyles } from '../const/styles';
 import MessageBuilder from './MessageBuliders';
@@ -46,6 +47,9 @@ const FriendsMessages = () => {
     // const [inputValue, setInputValue] = useState('');
     const [messages, setMessages] = useState(CHAT_MESSAGES_TWO);
 
+
+
+
     // const onChangeNewMessage = (newMessage) => {
     //     setInputValue(newMessage);
     // }
@@ -72,6 +76,7 @@ const FriendsMessages = () => {
 
     // console.log(messages);
     return (
+
         <View>
             <FlatList
                 data={messages}
