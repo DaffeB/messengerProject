@@ -10,6 +10,7 @@ import MessageBuilder from './MessageBuliders';
 const myProfileId = 1;
 const myUsername = "Aley";
 
+
 const CHAT_MESSAGES_TWO = [
     {
         id: 1,
@@ -42,41 +43,71 @@ const CHAT_MESSAGES_TWO = [
 
 
 
-const FriendsMessages = () => {
+// const FriendsMessages = () => {
 
-    // const [inputValue, setInputValue] = useState('');
+//     // const [inputValue, setInputValue] = useState('');
+//     const [allMessages, setMessages] = useState(CHAT_MESSAGES_TWO);
+
+
+
+
+// const onChangeNewMessage = (newMessage) => {
+//     setInputValue(newMessage);
+// }
+
+// const onPressSend = () => {
+//     console.log(inputValue);
+//     setMessages([...messages, {
+//         id: myProfileId,
+//         username: myUsername,
+//         message: inputValue
+//     }]);
+//     setInputValue('');
+// }
+
+// useEffect(() => {
+//     if (messages[messages.length - 1].id === 1) {
+//         setMessages([...messages, {
+//             id: 2,
+//             username: "Tiana",
+//             message: "ok!"
+//         }])
+//     }
+// }, [messages]);
+
+// console.log(messages);
+//     return (
+
+//         <View>
+//             <FlatList
+//                 data={allMessages}
+//                 horizontal={false}
+//                 style={{ height: '90%' }}
+//                 renderItem={({ item }) => {
+//                     return (
+//                         <MessageBuilder item={item} itsMe={myProfileId === item.id} />
+//                     );
+//                 }}
+//                 keyExtractor={item => item.id}
+//             />
+//             <View>
+
+//                 <MessageInputField />
+//             </View>
+
+//         </View>
+
+//     );
+// };
+
+
+
+
+const FriendsMessages = () => {
+    const [myProfileId] = useState(1);
     const [messages, setMessages] = useState(CHAT_MESSAGES_TWO);
 
-
-
-
-    // const onChangeNewMessage = (newMessage) => {
-    //     setInputValue(newMessage);
-    // }
-
-    // const onPressSend = () => {
-    //     console.log(inputValue);
-    //     setMessages([...messages, {
-    //         id: myProfileId,
-    //         username: myUsername,
-    //         message: inputValue
-    //     }]);
-    //     setInputValue('');
-    // }
-
-    // useEffect(() => {
-    //     if (messages[messages.length - 1].id === 1) {
-    //         setMessages([...messages, {
-    //             id: 2,
-    //             username: "Tiana",
-    //             message: "ok!"
-    //         }])
-    //     }
-    // }, [messages]);
-
-    // console.log(messages);
     return (
-
         <View>
             <FlatList
                 data={messages}
@@ -87,17 +118,17 @@ const FriendsMessages = () => {
                         <MessageBuilder item={item} itsMe={myProfileId === item.id} />
                     );
                 }}
-                keyExtractor={item => item.id}
+                keyExtractor={item => item.id.toString()}
             />
             <View>
-
-                <MessageInputField />
+                <MessageInputField myProfileId={myProfileId} setMessages={setMessages} messages={messages} />
             </View>
-
         </View>
-
     );
 };
+
+
+
 
 export default FriendsMessages;
 

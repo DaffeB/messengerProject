@@ -26,6 +26,7 @@ import { Image } from 'react-native';
 import FriendsMessages from './src/screens/FriendsMessages';
 
 
+
 const Stack = createNativeStackNavigator()
 const BottomTabs = createBottomTabNavigator()
 
@@ -48,6 +49,7 @@ const App = () => {
               headerShown: true,
 
               headerLeft: () =>
+
                 <BackButtonHeader />
             }}
 
