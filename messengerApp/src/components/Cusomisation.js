@@ -8,7 +8,7 @@ const Cusomisation = () => {
         <View style={{ paddingHorizontal: 16, width: '100%' }} >
             <Text style={styles.title}>Cusomisation</Text>
 
-            <View style={{ borderWidth: 1, paddingLeft: 16, borderRadius: 10, height: '66%', borderColor: GlobalStyles.colors.greyFive }}>
+            <View style={{ borderWidth: 1, paddingLeft: 16, borderRadius: 10, height: '66%', borderColor: GlobalStyles.colors.greyFive, backgroundColor: GlobalStyles.colors.greyThree }}>
                 <View style={[styles.details, { marginTop: 10 }]}>
                     <Image style={styles.icons} source={require('../assets/iconsFriendsProfile/themeIcon.png')} />
 
@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
     },
 
     icons: {
-        width: 20,
-        height: 20,
+        width: 25,
+        height: 25,
         marginRight: 20
     },
     details: {
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     bottomLine: {
         borderBottomColor: GlobalStyles.colors.greyFive,
         borderBottomWidth: 1,
-        width: '88%',
+        width: '86%',
         paddingVertical: 0
 
 
