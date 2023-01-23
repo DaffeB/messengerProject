@@ -24,6 +24,7 @@ import BackButtonHeader from './src/const/BackButtonHeader';
 import { GlobalStyles } from './src/const/styles';
 import { Image } from 'react-native';
 import FriendsMessages from './src/screens/FriendsMessages';
+import ProfileDetailsScreenOfFriends from './src/screens/PorfileDetailsScreenOfFriends';
 
 
 
@@ -47,13 +48,16 @@ const App = () => {
 
             options={{
               headerShown: true,
+              title: 'Aley',
+
 
               headerLeft: () =>
-
                 <BackButtonHeader />
             }}
 
+
           />
+          <Stack.Screen name="ProfileDetailsScreenOfFriends" component={ProfileDetailsScreenOfFriends} />
         </Stack.Navigator>
       </NavigationContainer >
     </>
