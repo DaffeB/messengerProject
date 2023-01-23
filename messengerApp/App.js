@@ -15,6 +15,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useNavigation } from '@react-navigation/native';
 import Header from './src/components/Header';
 import ChatsScreen from './src/screens/BottomTabNavigatorScreens/ChatsScreen';
 import CallsScreen from './src/screens/BottomTabNavigatorScreens/CallsScreen';
@@ -24,7 +25,9 @@ import BackButtonHeader from './src/const/BackButtonHeader';
 import { GlobalStyles } from './src/const/styles';
 import { Image } from 'react-native';
 import FriendsMessages from './src/screens/FriendsMessages';
-import ProfileDetailsScreenOfFriends from './src/screens/PorfileDetailsScreenOfFriends';
+import ProfileScreenDetails from './src/screens/ProfileScreenDetails'
+import GoToProfile from './src/const/GoToProfile';
+
 
 
 
@@ -32,6 +35,7 @@ const Stack = createNativeStackNavigator()
 const BottomTabs = createBottomTabNavigator()
 
 const App = () => {
+
   return (
     <>
       <NavigationContainer>
@@ -52,12 +56,21 @@ const App = () => {
 
 
               headerLeft: () =>
-                <BackButtonHeader />
+                <BackButtonHeader />,
+
+
+
+              headerRight: () =>
+                <GoToProfile />
             }}
-
-
           />
-          <Stack.Screen name="ProfileDetailsScreenOfFriends" component={ProfileDetailsScreenOfFriends} />
+          <Stack.Screen name="ProfileScreenDetails" component={ProfileScreenDetails}
+            options={{
+              headerShown: true,
+              title: 'Details'
+            }}
+          />
+
         </Stack.Navigator>
       </NavigationContainer >
     </>

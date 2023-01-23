@@ -4,7 +4,7 @@ import { Image } from 'react-native';
 import BackButtonHeader from '../const/BackButtonHeader';
 import MessageInputField from '../const/MessageInputField';
 import { GlobalStyles } from '../const/styles';
-import GoToProfileDetails from './GoToProfileDetails';
+
 import MessageBuilder from './MessageBuliders';
 
 
@@ -125,7 +125,7 @@ const FriendsMessages = () => {
             />
             <View>
                 <MessageInputField myProfileId={myProfileId} setMessages={setMessages} messages={messages} />
-                <GoToProfileDetails />
+
             </View>
         </View>
     );
