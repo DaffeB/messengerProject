@@ -1,75 +1,54 @@
-import { Text, View, StyleSheet } from "react-native";
-import { Image } from "react-native";
-import { GlobalStyles } from "../const/styles";
 
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import { Image } from 'react-native'
+import { GlobalStyles } from '../const/styles'
 
-const TryIt = () => (
-    <View style={{ paddingHorizontal: 16 }}>
-        <Text style={styles.title}>Cusomisation</Text>
-        <View style={{
-            width: '100%',
-            height: 200, flexDirection: 'column',
-            backgroundColor: GlobalStyles.colors.greyThree, borderWidth: 1,
-            borderColor: GlobalStyles.colors.greyThree, borderRadius: 10,
+const TryIt = () => {
+    return (
+        <View style={{ paddingHorizontal: 16, width: '100%' }} >
+            <Text style={styles.title}>Cusomisation</Text>
 
-        }}>
-
-
-            <View style={{ flexDirection: 'row' }}>
-                <View style={styles.lines}>
+            <View style={{ borderWidth: 1, paddingLeft: 16, borderRadius: 10, height: '66%', borderColor: GlobalStyles.colors.greyFive, backgroundColor: GlobalStyles.colors.greyThree }}>
+                <View style={[styles.details, { marginTop: 10 }]}>
                     <Image style={styles.icons} source={require('../assets/iconsFriendsProfile/themeIcon.png')} />
+
+
+                    <View style={styles.bottomLine}>
+                        <Text style={styles.detailsInfo}>
+                            Theme</Text>
+
+                    </View>
+
                 </View>
-                <View style={{ height: 50, borderBottomColor: GlobalStyles.colors.greyFive, borderWidth: 1, borderTopColor: 'transparent', borderLeftColor: 'transparent', borderRightColor: 'transparent', width: '80%' }}>
-                    <Text style={{ marginTop: 15 }}>
-                        Theme
-                    </Text>
-                </View>
-            </View>
 
-
-
-            <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                <View style={styles.lines}>
+                <View style={styles.details}>
                     <Image style={styles.icons} source={require('../assets/iconsFriendsProfile/lips.png')} />
+                    <View style={styles.bottomLine}>
+                        <Text style={styles.detailsInfo}>Quick reaction</Text>
+                    </View>
                 </View>
-                <View style={{ height: 50, borderBottomColor: GlobalStyles.colors.greyFive, borderWidth: 1, borderTopColor: 'transparent', borderLeftColor: 'transparent', borderRightColor: 'transparent', width: '80%' }}>
-                    <Text style={{ marginTop: 15 }}>
-                        Quick reaction
-                    </Text>
-                </View>
-            </View>
 
-
-            <View style={{ flexDirection: 'row' }}>
-                <View style={styles.lines}>
+                <View style={styles.details}>
                     <Image style={styles.icons} source={require('../assets/iconsFriendsProfile/nicknamesIcon.png')} />
+                    <View style={styles.bottomLine}>
+                        <Text style={styles.detailsInfo}>Nicknames</Text>
+                    </View>
                 </View>
-                <View style={styles.borderColor}>
-                    <Text style={{ marginTop: 15 }}>
-                        Nicknames
-                    </Text>
-                </View>
-            </View>
 
-            <View style={{ flexDirection: 'row' }}>
-                <View style={styles.lines}>
+                <View style={[styles.details, { marginBottom: 10 }]}>
                     <Image style={styles.icons} source={require('../assets/iconsFriendsProfile/wordsEffectIcon.png')} />
-                </View>
-                <View style={{ height: 50, width: '80%' }}>
-                    <Text style={{ marginTop: 15 }}>
-                        Words effect
-                    </Text>
+                    <View>
+                        <Text style={styles.detailsInfo}>Words effect</Text>
+                    </View>
+
                 </View>
             </View>
+        </View >
+    )
+}
 
-
-        </View>
-    </View>
-);
-
-export default TryIt;
-
-
+export default TryIt
 
 const styles = StyleSheet.create({
     title: {
@@ -83,17 +62,26 @@ const styles = StyleSheet.create({
         height: 25,
         marginRight: 20
     },
+    details: {
 
-    lines: {
-        height: 50, width: '20%', alignItems: 'center', justifyContent: 'center'
+        flexDirection: 'row',
+        height: '26%',
+        paddingVertical: 15,
+        paddingLeft: 10,
+
+
     },
-    borderColor: {
-        height: 50,
+    bottomLine: {
         borderBottomColor: GlobalStyles.colors.greyFive,
-        borderWidth: 1,
-        borderTopColor: 'transparent',
-        borderLeftColor: 'transparent',
-        borderRightColor: 'transparent',
-        width: '80%'
+        borderBottomWidth: 1,
+        width: '86%',
+        paddingVertical: 0
+
+
+    },
+    detailsInfo: {
+        fontSize: 15,
+        fontWeight: '600'
     }
+
 })

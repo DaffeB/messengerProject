@@ -37,7 +37,7 @@ const MessageInputField = ({ myProfileId, setMessages, messages }) => {
             <View style={{ borderWidth: 1, height: 30, width: '65%', borderRadius: 20, borderColor: GlobalStyles.colors.greyFive }}>
                 <TextInput
                     placeholder="Message"
-                    style={{ paddingHorizontal: 10, paddingVertical: 10 }}
+                    style={{ paddingHorizontal: 10, paddingVertical: 5 }}
                     onChangeText={onChangeNewMessage}
                     value={inputValue}
                 />

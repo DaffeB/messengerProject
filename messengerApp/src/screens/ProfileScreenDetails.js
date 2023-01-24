@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Image } from 'react-native'
-import Cusomisation from '../components/Cusomisation'
-import TryIt from '../components/TryIt'
+
+// import TryIt from '../components/TryIt'
 import { ScrollView } from 'react-native-gesture-handler'
 import { GlobalStyles } from '../const/styles'
-import TryItAgain from '../components/TryItAgain'
+// import TryItAgain from '../components/TryItAgain'
+import Cusomisation from '../components/ProfileDetailsScreenOfFriens/Cusomisation'
+import MoreActions from '../components/ProfileDetailsScreenOfFriens/MoreActions'
+import PrivacyAndSupport from '../components/ProfileDetailsScreenOfFriens/PrivacyAndSupport'
 
 const ProfileScreenDetails = () => {
 
@@ -29,8 +32,10 @@ const ProfileScreenDetails = () => {
 
                     </View>
                     {/* <TryItAgain /> */}
-                    {/* <Cusomisation /> */}
-                    <TryIt />
+                    <Cusomisation />
+                    {/* <TryIt /> */}
+                    <MoreActions />
+                    <PrivacyAndSupport />
 
                     <View>
 
