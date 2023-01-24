@@ -59,20 +59,14 @@ const App = () => {
                 <View style={{ flexDirection: 'row' }}>
                   <BackButtonHeader />
                   <GoToProfile />
-                </View>
+                </View>,
 
-
-
-
-
-              // headerRight: () =>
-              //   <GoToProfile />
             }}
           />
           <Stack.Screen name="ProfileScreenDetails" component={ProfileScreenDetails}
             options={{
               headerShown: true,
-              title: 'Details'
+              title: ''
             }}
           />
 

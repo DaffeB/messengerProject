@@ -9,42 +9,46 @@ import { GlobalStyles } from '../const/styles'
 import Cusomisation from '../components/ProfileDetailsScreenOfFriens/Cusomisation'
 import MoreActions from '../components/ProfileDetailsScreenOfFriens/MoreActions'
 import PrivacyAndSupport from '../components/ProfileDetailsScreenOfFriens/PrivacyAndSupport'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const ProfileScreenDetails = () => {
 
 
     return (
-        <ScrollView>
-            <View>
-
+        <SafeAreaView>
+            <ScrollView>
                 <View>
 
-                    <View style={styles.content}>
+                    <View>
 
-                        <Image style={{ width: 70, height: 70 }} source={require('../assets/images/users/man1.png')} />
-                        <Text style={styles.friendProfileName}>Aley</Text>
-                        <View style={{ flexDirection: 'row', paddingTop: 20, paddingBottom: 20, width: 100, justifyContent: 'space-around' }}>
+                        <View style={styles.content}>
 
-                            <Image source={require('../assets/iconsFriendsProfile/facebookIcon.png')} />
-                            <Image source={require('../assets/iconsFriendsProfile/bellIcon.png')} />
+                            <Image style={{ width: 70, height: 70 }} source={require('../assets/images/users/man1.png')} />
+                            <Text style={styles.friendProfileName}>Aley</Text>
+                            <View style={{ flexDirection: 'row', paddingTop: 20, paddingBottom: 20, width: 100, justifyContent: 'space-around' }}>
+
+                                <Image source={require('../assets/iconsFriendsProfile/facebookIcon.png')} />
+                                <Image source={require('../assets/iconsFriendsProfile/bellIcon.png')} />
+                            </View>
+
+
+                        </View>
+                        {/* <TryItAgain /> */}
+                        <Cusomisation />
+                        {/* <TryIt /> */}
+                        <MoreActions />
+                        <PrivacyAndSupport />
+
+                        <View>
+
                         </View>
 
 
                     </View>
-                    {/* <TryItAgain /> */}
-                    <Cusomisation />
-                    {/* <TryIt /> */}
-                    <MoreActions />
-                    <PrivacyAndSupport />
-
-                    <View>
-
-                    </View>
-
-
                 </View>
-            </View>
-        </ScrollView >
+            </ScrollView >
+        </SafeAreaView>
+
 
     )
 }
