@@ -8,7 +8,7 @@ const BackButtonHeader = () => {
 
     return (
         <Pressable onPress={() => navigation.goBack()}>
-            <Image style={{ width: 20, height: 20 }} source={require('../assets/icons/goBackLeft.png')} />
+            <Image style={{ width: 20, height: 20, marginRight: 15 }} source={require('../assets/icons/goBackLeft.png')} />
         </Pressable>
     )
 }
