@@ -27,6 +27,8 @@ import { Image } from 'react-native';
 import FriendsMessages from './src/screens/FriendsMessages';
 import ProfileScreenDetails from './src/screens/ProfileScreenDetails'
 import GoToProfile from './src/const/GoToProfile';
+import LoginForm from './src/components/LogInForm/LoginForm';
+
 
 
 
@@ -42,6 +44,8 @@ const App = () => {
         <Stack.Navigator screenOptions={{
           headerShown: false
         }}>
+
+          <Stack.Screen name='LoginForm' component={LoginForm} />
           <Stack.Screen name="ScreensTabs" component={ScreensTabs}
 
           />
