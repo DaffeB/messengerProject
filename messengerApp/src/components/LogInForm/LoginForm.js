@@ -2,6 +2,8 @@
 
 
 import React, { useState } from 'react';
+import { Image } from 'react-native';
+import Panda from '../../assets/Panda';
 import { View, TextInput, TouchableOpacity, Text, StyleSheet, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
@@ -18,8 +20,31 @@ const LoginForm = () => {
     const auth = getAuth(app)
 
 
+    const handleCreateAccount = () => {
+        if (password.length > 10) {
+            return (
+                <Panda />
 
-    const handleLogin = () => {
+            )
+        } else {
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    console.log('Account created')
+                    const user = userCredential.user
+                    console.log(user)
+                    navigation.navigate('LoginForm');
+
+
+                })
+                .catch(error => {
+                    console.log(error)
+
+                })
+        }
+    }
+
+
+    const handleLoginAccount = () => {
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -36,6 +61,10 @@ const LoginForm = () => {
 
     return (
         <View style={styles.container}>
+            <View>
+                {handleCreateAccount()}
+            </View>
+
             <TextInput
                 style={styles.input}
                 placeholder="Email"
@@ -49,9 +78,17 @@ const LoginForm = () => {
                 onChangeText={text => setPassword(text)}
                 secureTextEntry={true}
             />
-            <TouchableOpacity style={styles.buttonContainer} onPress={handleLogin}>
+            <TouchableOpacity style={styles.buttonContainerLogin} onPress={handleLoginAccount}>
                 <Text style={styles.buttonText}>LOGIN</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.buttonContainerCreate} onPress={handleCreateAccount}>
+                <Text style={styles.buttonText}>CREATE</Text>
+            </TouchableOpacity>
+
+
+
+
+
         </View>
     );
 };
@@ -69,15 +106,29 @@ const styles = StyleSheet.create({
         color: 'black',
         paddingHorizontal: 10
     },
-    buttonContainer: {
-        backgroundColor: '#2980b9',
-        paddingVertical: 15
+    buttonContainerLogin: {
+        backgroundColor: '#22333b',
+        paddingVertical: 15,
+        borderRadius: 10,
+        marginBottom: 10
+    },
+    buttonContainerCreate: {
+        backgroundColor: '#1b3a4b',
+        paddingVertical: 15,
+        borderRadius: 10
     },
     buttonText: {
         textAlign: 'center',
         color: '#FFFFFF',
         fontWeight: '700'
+    },
+    pandaImage: {
+        width: 100,
+        height: 100,
+        alignSelf: 'center',
+        marginTop: 10
     }
+
 });
 
 export default LoginForm;
