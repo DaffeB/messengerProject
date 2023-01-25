@@ -4,6 +4,7 @@
 import React, { useState } from 'react';
 import { Image } from 'react-native';
 import Panda from '../../assets/Panda';
+import HappyPanda from '../../assets/HappyPanda';
 import { View, TextInput, TouchableOpacity, Text, StyleSheet, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
@@ -15,33 +16,65 @@ const LoginForm = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [accountCreated, setAccountCreated] = useState(false);
 
     const app = initializeApp(firebaseConfig)
     const auth = getAuth(app)
 
 
-    const handleCreateAccount = () => {
-        if (password.length > 10) {
-            return (
-                <Panda />
-
-            )
-        } else {
-            createUserWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    console.log('Account created')
-                    const user = userCredential.user
-                    console.log(user)
-                    navigation.navigate('LoginForm');
-
-
-                })
-                .catch(error => {
-                    console.log(error)
-
-                })
-        }
+    const options = {
+        password: password,
+        email: email,
+        passwordLength: 8,
+        containsLetter: true,
+        containsNumber: true
     }
+
+    const handleCreateAccount = () => {
+        createUserWithEmailAndPassword(auth, email, password, options)
+            .then((userCredential) => {
+                console.log('Account created')
+                const user = userCredential.user
+                console.log(user)
+                navigation.navigate('LoginForm');
+                setAccountCreated(true);
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
+
+    // const handleCreateAccount = () => {
+    //     if (password.length === 5) {
+    //         return (
+    //             <Panda />
+
+    //         )
+    //     }
+    //     // if (password.length === 11) {
+    //     //     return (
+    //     //         <HappyPanda />
+
+    //     //     )
+    //     // }
+    //     else {
+    //         createUserWithEmailAndPassword(auth, email, password)
+    //             .then((userCredential) => {
+    //                 console.log('Account created')
+    //                 const user = userCredential.user
+    //                 console.log(user)
+    //                 navigation.navigate('LoginForm');
+    //                 return <HappyPanda />
+
+
+    //             })
+    //             .catch(error => {
+    //                 console.log(error)
+
+    //             })
+    //     }
+    // }
 
 
     const handleLoginAccount = () => {
@@ -61,9 +94,9 @@ const LoginForm = () => {
 
     return (
         <View style={styles.container}>
-            <View>
-                {handleCreateAccount()}
-            </View>
+            <>
+                {accountCreated ? <HappyPanda /> : <Panda />}
+            </>
 
             <TextInput
                 style={styles.input}
