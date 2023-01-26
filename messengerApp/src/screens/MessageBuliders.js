@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Image } from "react-native";
 import { GlobalStyles } from "../const/styles";
+import moment from 'moment'
+
+
 
 
 const MessageBuilder = ({ item, itsMe }) => {
@@ -15,8 +18,17 @@ const MessageBuilder = ({ item, itsMe }) => {
 export default MessageBuilder;
 
 const MyMessageItem = ({ item }) => {
-    console.log("MyMessageItem")
-    console.log({ item });
+    const [now, setNow] = useState(moment());
+    // const today = moment().calendar()
+    // const todayString = moment().startOf('day').calendar();
+
+    const date = moment()
+    const today = date.isSame(moment(), 'day') ? "today" : date.format("MMMM DD, YYYY");
+
+    // const currentDate = useCurrentDate()
+
+    // console.log("MyMessageItem")
+    // console.log({ item });
 
     return (
         <View style={{ justifyContent: 'flex-end', flexDirection: 'row', paddingHorizontal: 16 }}>
@@ -29,6 +41,13 @@ const MyMessageItem = ({ item }) => {
                     <View>
                         <Text>{item.message}</Text>
                     </View>
+                    <View>
+                        {/* <Text>{now.format('MMMM Do YYYY, h:mm:ss a')}</Text> */}
+                        {/* <Text>{today}</Text> */}
+                        {/* <Text>{todayString}</Text> */}
+                        <Text>{today}</Text>
+                    </View>
+
                 </View>
             </View>
         </View>
@@ -36,8 +55,21 @@ const MyMessageItem = ({ item }) => {
     );
 };
 
-const FriendMessageItem = ({ item }) => {
 
+
+// const letDate = () => {
+//     const today = moment().calendar()
+//     return (
+//         <View>
+//             <Text>{today}</Text>
+//         </View>
+//     )
+// }
+
+
+// letDate()
+const FriendMessageItem = ({ item }) => {
+    // const currentDate = useCurrentDate()
     return (
         <View style={{ paddingHorizontal: 16, flexDirection: 'row' }}>
             <Image style={{ width: 20, height: 20, marginTop: 22, marginRight: 10 }} source={require('../assets/images/users/man.png')} />
@@ -49,6 +81,7 @@ const FriendMessageItem = ({ item }) => {
                 <View>
                     <Text >{item.message}</Text>
                 </View>
+
 
             </View>
         </View>

@@ -114,9 +114,11 @@ const LoginForm = () => {
             <TouchableOpacity style={styles.buttonContainerLogin} onPress={handleLoginAccount}>
                 <Text style={styles.buttonText}>LOGIN</Text>
             </TouchableOpacity>
+
             <TouchableOpacity style={styles.buttonContainerCreate} onPress={handleCreateAccount}>
                 <Text style={styles.buttonText}>CREATE</Text>
             </TouchableOpacity>
+            <Text style={{ paddingHorizontal: 5, marginTop: 5 }}>Password must have at least 8 characters</Text>
 
 
 
