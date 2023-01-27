@@ -82,8 +82,14 @@ const DATA = [
 
 
 
+
+
+
+
+
 const Messages = ({ route }) => {
     const navigation = useNavigation();
+
     return (
 
         <View>
@@ -114,8 +120,6 @@ const Messages = ({ route }) => {
                                 </TouchableOpacity>
 
                             </View>
-
-
 
                         </View>
 

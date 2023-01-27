@@ -1,7 +1,7 @@
+import DATA from '../const/Data'
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { Image } from 'react-native'
-
 // import TryIt from '../components/TryIt'
 import { ScrollView } from 'react-native-gesture-handler'
 import { GlobalStyles } from '../const/styles'
@@ -11,7 +11,11 @@ import MoreActions from '../components/ProfileDetailsScreenOfFriens/MoreActions'
 import PrivacyAndSupport from '../components/ProfileDetailsScreenOfFriens/PrivacyAndSupport'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
+
+
+
 function ProfileScreenDetails({ route }) {
+    const [userName, setUserName] = useState(DATA[0].username);
 
 
 
@@ -25,7 +29,7 @@ function ProfileScreenDetails({ route }) {
                         <View style={styles.content}>
 
                             <Image style={{ width: 70, height: 70 }} source={require('../assets/images/users/man1.png')} />
-                            <Text style={styles.friendProfileName}>Aley</Text>
+                            <Text style={styles.friendProfileName}>hehe: {userName}</Text>
                             <View style={{ flexDirection: 'row', paddingTop: 20, paddingBottom: 20, width: 100, justifyContent: 'space-around' }}>
 
                                 <Image source={require('../assets/iconsFriendsProfile/facebookIcon.png')} />
@@ -64,7 +68,8 @@ const styles = StyleSheet.create({
     friendProfileName: {
         fontWeight: '800',
         fontSize: 24,
-        paddingTop: 20
+        paddingTop: 20,
+        color: 'red'
     },
 
 })
