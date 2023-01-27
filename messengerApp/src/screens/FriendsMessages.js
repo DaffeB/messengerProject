@@ -6,6 +6,7 @@ import MessageInputField from '../const/MessageInputField';
 import { GlobalStyles } from '../const/styles';
 
 import MessageBuilder from './MessageBuliders';
+import DATA from '../const/Data'
 
 
 const myProfileId = 1;
@@ -104,36 +105,39 @@ const CHAT_MESSAGES_TWO = [
 
 
 
-const FriendsMessages = () => {
+
+const FriendsMessages = ({ route }) => {
+    const [userName, setUserName] = useState(DATA.userName); // set the userName state from the imported data
     const [myProfileId] = useState(1);
     const [messages, setMessages] = useState(CHAT_MESSAGES_TWO);
 
     return (
         <View>
-
-
             <FlatList
                 data={messages}
                 horizontal={false}
                 style={{ height: '90%' }}
                 renderItem={({ item }) => {
                     return (
-                        <MessageBuilder item={item} itsMe={myProfileId === item.id} />
+                        <MessageBuilder item={item} itsMe={myProfileId === item.id} userName={userName} />
+                        //pass the userName state to the MessageBuilder component as a prop
                     );
                 }}
                 keyExtractor={item => item.id.toString()}
             />
             <View>
-                <MessageInputField myProfileId={myProfileId} setMessages={setMessages} messages={messages} />
-
+                <MessageInputField myProfileId={myProfileId} setMessages={setMessages} setUserName={setUserName} messages={messages} />
             </View>
+            <Text>Username {userName}</Text>
         </View>
     );
 };
 
-
-
-
 export default FriendsMessages;
+
+
+
+
+
 
 const styles = StyleSheet.create({});

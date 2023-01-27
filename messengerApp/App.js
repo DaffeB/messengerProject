@@ -53,20 +53,17 @@ const App = () => {
 
           />
           <Stack.Screen name="FriendsMessages" component={FriendsMessages}
-
-            options={{
+            options={({ route }) => ({
+              title: route.params.userName,
               headerShown: true,
-              title: '',
-
-
               headerLeft: () =>
                 <View style={{ flexDirection: 'row' }}>
                   <BackButtonHeader />
                   <GoToProfile />
                 </View>,
-
-            }}
+            })}
           />
+
           <Stack.Screen name="ProfileScreenDetails" component={ProfileScreenDetails}
             options={{
               headerShown: true,

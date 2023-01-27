@@ -11,7 +11,8 @@ import MoreActions from '../components/ProfileDetailsScreenOfFriens/MoreActions'
 import PrivacyAndSupport from '../components/ProfileDetailsScreenOfFriens/PrivacyAndSupport'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-const ProfileScreenDetails = () => {
+function ProfileScreenDetails({ route }) {
+
 
 
     return (

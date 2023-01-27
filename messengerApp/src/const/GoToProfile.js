@@ -9,7 +9,6 @@ const GoToProfile = () => {
     return (
         <Pressable onPress={() => navigation.navigate('ProfileScreenDetails')}>
             <View style={{ flexDirection: 'row-reverse' }}>
-                <Text style={{ fontSize: 16, fontWeight: '600', marginLeft: 10 }}>Aley</Text>
                 <Image style={{ width: 25, height: 25 }} source={require('../assets/images/users/man1.png')} />
             </View>
 

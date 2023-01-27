@@ -84,7 +84,6 @@ const DATA = [
 
 const Messages = ({ route }) => {
     const navigation = useNavigation();
-
     return (
 
         <View>
@@ -103,8 +102,7 @@ const Messages = ({ route }) => {
                             <View>
 
                                 <TouchableOpacity
-
-                                    onPress={() => navigation.navigate('FriendsMessages')}>
+                                    onPress={() => navigation.navigate('FriendsMessages', { userName: item.username })}>
 
 
                                     <Text style={{ color: 'black', marginTop: 5, fontWeight: '500', fontSize: 16 }}>{item.username}</Text>
@@ -133,9 +131,7 @@ const Messages = ({ route }) => {
     );
 };
 
-
 export default Messages
-
 const styles = StyleSheet.create({})
 
 

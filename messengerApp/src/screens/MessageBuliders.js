@@ -7,13 +7,19 @@ import moment from 'moment'
 
 
 
-const MessageBuilder = ({ item, itsMe }) => {
-    return itsMe ? (
-        <MyMessageItem item={item} />
-    ) : (
-        <FriendMessageItem item={item} />
+const MessageBuilder = (props) => {
+    return (
+        <View>
+            <Text>{props.userName}</Text>
+            {props.itsMe ? (
+                <MyMessageItem item={props.item} />
+            ) : (
+                <FriendMessageItem item={props.item} />
+            )}
+        </View>
     );
-};
+}
+
 
 export default MessageBuilder;
 
