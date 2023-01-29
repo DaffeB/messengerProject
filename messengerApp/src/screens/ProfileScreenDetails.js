@@ -34,7 +34,7 @@ function ProfileScreenDetails({ route }) {
                             </View>
                         </View>
                         <View>
-                            <Text>haha: {userName}</Text>
+
                         </View>
                         {/* <TryItAgain /> */}
                         <Cusomisation />
