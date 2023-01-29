@@ -111,6 +111,8 @@ const Messages = ({ route }) => {
                                     onPress={() => navigation.navigate('FriendsMessages', { userName: item.username })}>
 
 
+
+
                                     <Text style={{ color: 'black', marginTop: 5, fontWeight: '500', fontSize: 16 }}>{item.username}</Text>
                                     <View style={{ flexDirection: 'row', fontSize: 14, lineHeight: 25 }}>
                                         <Text style={{ fontWeight: '300', marginRight: 10 }}>{item.text}</Text>

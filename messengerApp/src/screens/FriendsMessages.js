@@ -106,8 +106,9 @@ const CHAT_MESSAGES_TWO = [
 
 
 
-const FriendsMessages = ({ route }) => {
-    const [userName, setUserName] = useState(DATA.userName); // set the userName state from the imported data
+function FriendsMessages({ route }) {
+    const { userName } = route.params;
+    // const [userName, setUserName] = useState(DATA.userName); // set the userName state from the imported data
     const [myProfileId] = useState(1);
     const [messages, setMessages] = useState(CHAT_MESSAGES_TWO);
 
@@ -119,16 +120,17 @@ const FriendsMessages = ({ route }) => {
                 style={{ height: '90%' }}
                 renderItem={({ item }) => {
                     return (
-                        <MessageBuilder item={item} itsMe={myProfileId === item.id} userName={userName} />
+                        <MessageBuilder item={item} itsMe={myProfileId === item.id} userName={userName} /> // here with userName we are ggeting names in chatScreen
                         //pass the userName state to the MessageBuilder component as a prop
                     );
                 }}
                 keyExtractor={item => item.id.toString()}
             />
             <View>
-                <MessageInputField myProfileId={myProfileId} setMessages={setMessages} setUserName={setUserName} messages={messages} />
+                <MessageInputField myProfileId={myProfileId} setMessages={setMessages} messages={messages} />
+                {/* <MessageInputField myProfileId={myProfileId} setMessages={setMessages} setUserName={setUserName} messages={messages} /> */}
             </View>
-            <Text>Username {userName}</Text>
+            {/* <Text>Username {userName}</Text> */}
         </View>
     );
 };
