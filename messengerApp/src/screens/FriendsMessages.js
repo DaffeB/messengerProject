@@ -9,9 +9,6 @@ import MessageBuilder from './MessageBuliders';
 import DATA from '../const/Data'
 
 
-const myProfileId = 1;
-const myUsername = "Aley";
-
 
 const CHAT_MESSAGES_TWO = [
     {

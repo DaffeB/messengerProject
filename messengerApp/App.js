@@ -59,7 +59,7 @@ const App = () => {
               headerLeft: () =>
                 <View style={{ flexDirection: 'row' }}>
                   <BackButtonHeader />
-                  <GoToProfile />
+                  <GoToProfile data={route.params} />
                 </View>,
             })}
           />
@@ -132,7 +132,7 @@ const ScreensTabs = () => {
 
 
         }} />
-      <BottomTabs.Screen name='Calls Screen' component={CallsScreen}
+      <BottomTabs.Screen name='Calls' component={CallsScreen}
         options={{
 
           tabBarLabel: 'Calls',
@@ -150,7 +150,7 @@ const ScreensTabs = () => {
           ),
           tabBarIcon: ({ focused }) =>
             <Image
-              source={require('./src/assets/images/telephone.png')}
+              source={require('./src/assets/icons/videoCamera.png')}
               style={{
                 width: focused ? 23 : 20,
                 height: focused ? 23 : 20,

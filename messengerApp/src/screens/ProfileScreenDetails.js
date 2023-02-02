@@ -15,11 +15,6 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 
 function ProfileScreenDetails({ route }) {
-
-    const { userName } = route.params;
-
-
-
     return (
         <SafeAreaView>
             <ScrollView>
@@ -27,7 +22,7 @@ function ProfileScreenDetails({ route }) {
                     <View>
                         <View style={styles.content}>
                             <Image style={{ width: 70, height: 70 }} source={require('../assets/images/users/man1.png')} />
-                            <Text style={styles.friendProfileName}>User: {userName}</Text>
+                            <Text style={styles.friendProfileName}>User: {route.params.username}</Text>
                             <View style={{ flexDirection: 'row', paddingTop: 20, paddingBottom: 20, width: 100, justifyContent: 'space-around' }}>
                                 <Image source={require('../assets/iconsFriendsProfile/facebookIcon.png')} />
                                 <Image source={require('../assets/iconsFriendsProfile/bellIcon.png')} />

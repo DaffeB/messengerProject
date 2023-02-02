@@ -14,8 +14,8 @@ import { firebaseConfig } from '../../authentication/firebase';
 const LoginForm = () => {
     const navigation = useNavigation();
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('P@gmail.com');
+    const [password, setPassword] = useState('999999999');
     const [accountCreated, setAccountCreated] = useState(false);
 
     const app = initializeApp(firebaseConfig)
