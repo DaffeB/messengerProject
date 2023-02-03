@@ -7,10 +7,10 @@ const CallScreen = () => {
     const [calls, setCalls] = useState([
         {
             id: 1,
-            name: "Aley",
+            name: "Aley (2)",
             date: 'Today, 11:32 AM',
             image: require('../../assets/images/users/man.png'),
-            status: 'missed',
+            status: 'Missed',
             icon: '',
         },
         {
@@ -18,7 +18,7 @@ const CallScreen = () => {
             name: "Aley",
             date: 'Today, 9:32 AM',
             image: require('../../assets/images/users/man.png'),
-            status: 'missed',
+            status: 'Missed',
             icon: '',
         },
         {
@@ -26,16 +26,16 @@ const CallScreen = () => {
             name: "Aley",
             date: 'Yesterday, 9:32 AM',
             image: require('../../assets/images/users/man.png'),
-            status: 'missed',
+            status: 'Missed ',
             icon: '',
         },
 
         {
             id: 4,
-            name: 'Emeline',
+            name: 'Emeline (1)',
             date: 'Jan 29',
             image: require('../../assets/images/users/woman.png'),
-            status: 'incoming',
+            status: 'Incoming',
             icon: '',
         },
         {
@@ -43,7 +43,7 @@ const CallScreen = () => {
             name: 'Selma',
             date: 'Jan 22',
             image: require('../../assets/images/users/woman1.png'),
-            status: 'outgoing',
+            status: 'Outgoing',
             icon: '',
         },
 
@@ -52,7 +52,7 @@ const CallScreen = () => {
             name: "Tiffany",
             date: 'Jan 12',
             image: require('../../assets/images/users/woman3.png'),
-            status: 'missed',
+            status: 'Missed',
             icon: '',
         },
         {
@@ -60,7 +60,7 @@ const CallScreen = () => {
             name: "Tiffany",
             date: 'Jan 12',
             image: require('../../assets/images/users/woman3.png'),
-            status: 'missed',
+            status: 'Incoming',
             icon: '',
         },
         {
@@ -68,7 +68,7 @@ const CallScreen = () => {
             name: "Tiffany",
             date: 'Jan 12',
             image: require('../../assets/images/users/woman3.png'),
-            status: 'missed',
+            status: 'Missed',
             icon: '',
         },
         {
@@ -76,7 +76,7 @@ const CallScreen = () => {
             name: "Aley",
             date: 'Jan 4',
             image: require('../../assets/images/users/man.png'),
-            status: 'missed',
+            status: 'Missed',
             icon: '',
         },
         {
@@ -84,7 +84,7 @@ const CallScreen = () => {
             name: "Aley",
             date: 'Jan 4',
             image: require('../../assets/images/users/man.png'),
-            status: 'missed',
+            status: 'Missed',
             icon: '',
         },
         {
@@ -92,7 +92,7 @@ const CallScreen = () => {
             name: "Aley",
             date: 'Jan 4',
             image: require('../../assets/images/users/man.png'),
-            status: 'missed',
+            status: 'Missed',
             icon: '',
         },
         {
@@ -100,7 +100,7 @@ const CallScreen = () => {
             name: "Aley",
             date: 'Jan 4',
             image: require('../../assets/images/users/man.png'),
-            status: 'outgoing',
+            status: 'Outgoing',
             icon: '',
         },
         {
@@ -108,7 +108,7 @@ const CallScreen = () => {
             name: "Aley",
             date: 'Jan 4',
             image: require('../../assets/images/users/man.png'),
-            status: 'incoming',
+            status: 'Incoming',
             icon: '',
         },
         {
@@ -116,7 +116,7 @@ const CallScreen = () => {
             name: "Aley",
             date: 'Jan 4',
             image: require('../../assets/images/users/man.png'),
-            status: 'missed',
+            status: 'Missed',
             icon: '',
         },
         {
@@ -124,15 +124,15 @@ const CallScreen = () => {
             name: "Joana",
             date: 'Jan 12',
             image: require('../../assets/images/users/woman2.png'),
-            status: 'missed',
+            status: 'Missed',
             icon: '',
         },
         {
             id: 16,
-            name: "Joana",
+            name: "Joana (4)",
             date: 'Jan 12',
             image: require('../../assets/images/users/woman2.png'),
-            status: 'missed',
+            status: 'Missed',
             icon: '',
         },
         {
@@ -140,7 +140,7 @@ const CallScreen = () => {
             name: "Aley",
             date: 'Jan 4',
             image: require('../../assets/images/users/man.png'),
-            status: 'missed',
+            status: 'Missed',
             icon: '',
         },
         {
@@ -148,7 +148,7 @@ const CallScreen = () => {
             name: "Aley",
             date: 'Jan 4',
             image: require('../../assets/images/users/man.png'),
-            status: 'missed',
+            status: 'Missed',
             icon: '',
         },
         {
@@ -156,7 +156,7 @@ const CallScreen = () => {
             name: "Joana",
             date: 'Jan 12',
             image: require('../../assets/images/users/woman2.png'),
-            status: 'missed',
+            status: 'Missed ',
             icon: '',
         },
         {
@@ -164,16 +164,16 @@ const CallScreen = () => {
             name: 'Selma',
             date: 'Jan 22',
             image: require('../../assets/images/users/woman1.png'),
-            status: 'outgoing',
+            status: 'Outgoing',
             icon: '',
         },
 
         {
             id: 21,
             name: "Aley",
-            date: 'Jan 4',
+            date: 'November 23',
             image: require('../../assets/images/users/man.png'),
-            status: 'incoming',
+            status: 'Incoming',
             icon: '',
         },
 
@@ -188,41 +188,36 @@ const CallScreen = () => {
         <TouchableOpacity style={styles.callContainer}>
             <Image style={{ height: 30, width: 30, marginRight: 15 }} source={item.image}></Image>
             <View style={styles.leftContainer}>
-                <View style={styles.itemContainer}>
-                    <Image source={item.icon} style={styles.image} />
-                    <View style={styles.infoContainer}>
-                    </View>
-                    {item.status === 'missed' && (
-                        <View>
-                            <Image style={{
-                                width: 30,
-                                height: 30
-                            }} source={require('../../assets/icons/missedCall.png')} />
-                            <Text style={styles.missedCallText}>Missed</Text>
-                        </View>
-                    )}
-                    {item.status === 'incoming' && (
-                        <View style={styles.incomingCallContainer}>
-                            <Image style={{
-                                width: 30,
-                                height: 30
-                            }} source={require('../../assets/icons/videoCamera.png')} />
-                            <Text style={styles.incomingCallText}>Incoming</Text>
-                        </View>
-                    )}
-                    {item.status === 'outgoing' && (
-                        <View style={styles.outgoingCallContainer}>
-                            <Image style={{
-                                width: 30,
-                                height: 30
-                            }} source={require('../../assets/icons/missedCall.png')} />
-                            <Text style={styles.outgoingCallText}>Outgoing</Text>
-                        </View>
-                    )}
-                </View>
 
                 <Text style={styles.name}>{item.name}</Text>
                 <View style={{ flexDirection: 'row' }}>
+                    <View style={styles.itemContainer}>
+                        <Image source={item.icon} style={styles.image} />
+                        <View style={styles.infoContainer}>
+                        </View>
+                        {item.status === 'Missed' && (
+                            <View>
+                                <Image style={styles.iconsCall} source={require('../../assets/icons/rejected.png')} />
+
+                            </View>
+                        )}
+                        {item.status === 'Incoming' && (
+                            <View style={styles.incomingCallContainer}>
+                                <Image style={styles.iconsCall} source={require('../../assets/icons/incommingCall.png')} />
+                            </View>
+                        )}
+                        {item.status === 'Missed ' && (
+                            <View style={styles.incomingCallContainer}>
+                                <Image style={styles.iconsCall} source={require('../../assets/icons/videoCamera.png')} />
+                            </View>
+                        )}
+                        {item.status === 'Outgoing' && (
+                            <View style={styles.outgoingCallContainer}>
+                                <Image style={styles.iconsCall} source={require('../../assets/icons/outgoingCall.png')} />
+                            </View>
+                        )}
+                    </View>
+
                     <Text style={styles[item.status]}>{item.status}</Text>
                     <View style={styles.circleIcon}></View>
                     <Text style={styles.date}>{item.date}</Text>
@@ -264,24 +259,29 @@ const styles = {
         justifyContent: 'center'
     },
     name: {
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginBottom: 7
     },
     date: {
         color: '#666'
     },
-    missed: {
+    Missed: {
         color: 'red'
     },
-    incoming: {
-        color: 'green'
+    Incoming: {
+        color: '#495057'
     },
-    outgoing: {
-        color: 'blue'
+    Putgoing: {
+        color: '#495057'
     },
     circleIcon:
-        { borderWidth: 1, height: 4, width: 4, borderRadius: 4, backgroundColor: 'black' },
+        { borderWidth: 1, borderColor: '#adb5bd', height: 4, width: 4, borderRadius: 4, backgroundColor: '#adb5bd', marginRight: 7, marginLeft: 7, marginTop: 5 },
 
-
+    iconsCall: {
+        width: 13,
+        height: 13,
+        marginRight: 7
+    }
 };
 
 export default CallScreen;
