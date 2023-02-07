@@ -1,9 +1,11 @@
-import { TextInput, StyleSheet, View, FlatList, Text } from 'react-native';
+import { TextInput, StyleSheet, View, FlatList, Text, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { Image } from 'react-native';
 import { GlobalStyles } from '../const/styles';
 import DATA from '../const/Data';
 import Stories from './Stories';
+
 
 // const SearchBar = () => {
 
@@ -28,6 +30,8 @@ import Stories from './Stories';
 
 
 const SearchFriends = () => {
+    const navigation = useNavigation();
+
     const [searchTerm, setSearchTerm] = useState('');
 
 
@@ -35,28 +39,58 @@ const SearchFriends = () => {
 
     return (
         <View>
-            <TextInput
-                placeholder="Search for a person..."
-                onChangeText={text => setSearchTerm(text)}
-                value={searchTerm}
-            />
+            <View style={{ paddingHorizontal: 16, marginTop: 10 }}>
+                <View style={{ backgroundColor: GlobalStyles.colors.greyFour, borderWidth: 1, height: 40, width: '100%', borderColor: GlobalStyles.colors.greyFour, flexDirection: 'row', alignItems: 'center', borderRadius: 20 }}>
+                    <Image style={{ width: 20, height: 20, marginLeft: 10, marginRight: 5 }} source={require('../assets/images/search.png')} />
+                    <TextInput
+                        placeholder="Search"
+                        onChangeText={text => setSearchTerm(text)}
+                        value={searchTerm}
+                    />
+
+
+                </View>
+            </View>
+
+
 
             <View><Stories /></View>
 
-            <View style={{ borderWidth: 1 }}>
+            <View>
                 <FlatList
                     data={filteredData}
                     keyExtractor={item => item.id}
-                    renderItem={({ item }) => (
-                        <View>
+                    renderItem={({ item }) => {
+                        return (
 
-                            <Text>{item.username}</Text>
-                            <Text style={{ color: 'red' }}>{item.text}</Text>
-                            <Text>{item.timeOfMessage}</Text>
+                            <View style={{ alignItems: 'center', marginRight: 30, flexDirection: 'row', paddingHorizontal: 16, marginBottom: 15 }}>
+
+                                <View>
+                                    <Image key={item.id} source={item.img} style={{ width: 50, height: 50, marginRight: 10 }} />
+                                </View>
+                                <View>
+
+                                    <TouchableOpacity
+                                        onPress={() => navigation.navigate('FriendsMessages', { userName: item.username })}>
 
 
-                        </View>
-                    )}
+
+
+                                        <Text style={{ color: 'black', marginTop: 5, fontWeight: '500', fontSize: 16 }}>{item.username}</Text>
+                                        <View style={{ flexDirection: 'row', fontSize: 14, lineHeight: 25 }}>
+                                            <Text style={{ fontWeight: '300', marginRight: 10 }}>{item.text}</Text>
+                                            <Text style={{ fontWeight: '300', color: GlobalStyles.colors.greyFive }}>{item.timeOfMessage}</Text>
+                                        </View>
+
+                                    </TouchableOpacity>
+
+                                </View>
+
+                            </View>
+
+
+                        )
+                    }}
                 />
             </View>
 

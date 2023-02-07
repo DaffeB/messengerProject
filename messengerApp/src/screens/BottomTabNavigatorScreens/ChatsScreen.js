@@ -15,7 +15,7 @@ const ChatsScreen = () => {
             <SearchBar />
             <View style={{ flexDirection: 'row', marginTop: 20, paddingHorizontal: 16 }}>
             </View>
-            <Messages />
+            {/* <Messages /> */}
 
 
 

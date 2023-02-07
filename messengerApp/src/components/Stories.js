@@ -67,7 +67,7 @@ const Stories = ({ isActive }) => {
 
     return (
 
-        <View>
+        <View style={{ marginTop: 15, marginBottom: 15, marginLeft: 15 }}>
             <FlatList
                 data={DATA}
                 horizontal={true}
