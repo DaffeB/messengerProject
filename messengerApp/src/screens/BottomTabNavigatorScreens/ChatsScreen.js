@@ -14,7 +14,6 @@ const ChatsScreen = () => {
         <View style={{ backgroundColor: 'white', height: '100%' }} >
             <SearchBar />
             <View style={{ flexDirection: 'row', marginTop: 20, paddingHorizontal: 16 }}>
-                <Stories />
             </View>
             <Messages />
 

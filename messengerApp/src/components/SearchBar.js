@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Image } from 'react-native';
 import { GlobalStyles } from '../const/styles';
 import DATA from '../const/Data';
+import Stories from './Stories';
 
 // const SearchBar = () => {
 
@@ -40,6 +41,8 @@ const SearchFriends = () => {
                 value={searchTerm}
             />
 
+            <View><Stories /></View>
+
             <View style={{ borderWidth: 1 }}>
                 <FlatList
                     data={filteredData}
@@ -50,6 +53,8 @@ const SearchFriends = () => {
                             <Text>{item.username}</Text>
                             <Text style={{ color: 'red' }}>{item.text}</Text>
                             <Text>{item.timeOfMessage}</Text>
+
+
                         </View>
                     )}
                 />
