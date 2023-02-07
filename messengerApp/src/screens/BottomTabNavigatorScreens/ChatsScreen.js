@@ -18,8 +18,6 @@ const ChatsScreen = () => {
             {/* <Messages /> */}
 
 
-
-
         </View>
     )
 }

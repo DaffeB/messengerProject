@@ -56,7 +56,7 @@ const SearchFriends = () => {
 
             <View><Stories /></View>
 
-            <View>
+            <View style={{ height: 500 }}>
                 <FlatList
                     data={filteredData}
                     keyExtractor={item => item.id}

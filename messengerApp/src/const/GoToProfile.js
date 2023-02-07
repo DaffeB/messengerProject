@@ -9,8 +9,9 @@ const GoToProfile = ({ data }) => {
     return (
         <Pressable onPress={() => navigation.navigate('ProfileScreenDetails', { username: data.userName })}>
             <View style={{ flexDirection: 'row-reverse' }}>
+            <Text style={styles.friendName}>{data.userName}</Text>
                 <Image style={{ width: 25, height: 25 }} source={require('../assets/images/users/man1.png')} />
-                <Text>{data.userName}</Text>
+
             </View>
         </Pressable>
     )
@@ -18,5 +19,12 @@ const GoToProfile = ({ data }) => {
 
 export default GoToProfile
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    friendName:{
+        marginLeft: 12,
+        marginTop: 4,
+        fontWeight: '500',
+        fontSize: 16
+    }
+})
 

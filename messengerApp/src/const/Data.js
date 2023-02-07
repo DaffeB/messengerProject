@@ -66,6 +66,29 @@ const DATA = [
         text: "Love you",
         timeOfMessage: 'Monday'
     },
+    {
+        id: 10,
+        username: 'Troi',
+        img: require('../assets/images/users/man3.png'),
+        text: "Love you",
+        timeOfMessage: 'Friday'
+    },
+    {
+        id: 11,
+        username: 'Jack',
+        img: require('../assets/images/users/man4.png'),
+        text: "Love you",
+        timeOfMessage: 'Last week'
+    },
+    {
+        id: 12,
+        username: 'Diana',
+        img: require('../assets/images/users/girl1.png'),
+        text: "Love you",
+        timeOfMessage: '3 weeks ago'
+    },
+
+
 
 
 

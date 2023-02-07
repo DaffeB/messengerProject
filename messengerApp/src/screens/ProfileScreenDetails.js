@@ -22,7 +22,7 @@ function ProfileScreenDetails({ route }) {
                     <View>
                         <View style={styles.content}>
                             <Image style={{ width: 70, height: 70 }} source={require('../assets/images/users/man1.png')} />
-                            <Text style={styles.friendProfileName}>User: {route.params.username}</Text>
+                            <Text style={styles.friendProfileName}>{route.params.username}</Text>
                             <View style={{ flexDirection: 'row', paddingTop: 20, paddingBottom: 20, width: 100, justifyContent: 'space-around' }}>
                                 <Image source={require('../assets/iconsFriendsProfile/facebookIcon.png')} />
                                 <Image source={require('../assets/iconsFriendsProfile/bellIcon.png')} />
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
         fontWeight: '800',
         fontSize: 24,
         paddingTop: 20,
-        color: 'red'
+
     },
 
 })

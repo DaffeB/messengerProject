@@ -117,7 +117,7 @@ function FriendsMessages({ route }) {
                 style={{ height: '90%' }}
                 renderItem={({ item }) => {
                     return (
-                        <MessageBuilder item={item} itsMe={myProfileId === item.id} userName={userName} /> // here with userName we are ggeting names in chatScreen
+                        <MessageBuilder item={item} itsMe={myProfileId === item.id} /> // here with userName we are ggeting names in chatScreen
                         //pass the userName state to the MessageBuilder component as a prop
                     );
                 }}
@@ -127,7 +127,7 @@ function FriendsMessages({ route }) {
                 <MessageInputField myProfileId={myProfileId} setMessages={setMessages} messages={messages} />
                 {/* <MessageInputField myProfileId={myProfileId} setMessages={setMessages} setUserName={setUserName} messages={messages} /> */}
             </View>
-            {/* <Text>Username {userName}</Text> */}
+
         </View>
     );
 };
