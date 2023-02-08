@@ -5,6 +5,11 @@ import { GlobalStyles } from '../const/styles';
 import AddStory from './AddStory';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
+
+
+
+
+
 const DATA = [
     {
         id: 1,
@@ -64,7 +69,23 @@ const DATA = [
 
 const Stories = ({ isActive }) => {
 
+    // const [image, setImage] = useState(null);
 
+
+    // const handleImagePicking = () => {
+    //     ImageO.showImagePicker({}, (response) => {
+    //         if (response.didCancel) {
+    //             console.log('User cancelled image picker');
+    //         } else if (response.error) {
+    //             console.log('ImagePicker Error: ', response.error);
+    //         } else if (response.customButton) {
+    //             console.log('User tapped custom button: ', response.customButton);
+    //         } else {
+    //             const source = { uri: response.uri };
+    //             setImage(source);
+    //         }
+    //     });
+    // };
     return (
 
         <View style={{ marginTop: 15, marginBottom: 15, marginLeft: 15 }}>
@@ -82,6 +103,12 @@ const Stories = ({ isActive }) => {
                                             <Image style={{ width: 30, height: 30, tintColor: GlobalStyles.colors.greenFive }} source={require('../assets/images/plus.png')} />
                                         </View>
                                     </TouchableOpacity>}
+                                {/* 
+
+                                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                                    <TouchableOpacity title="Pick an Image" onPress={handleImagePicking} />
+                                    {image && <Image source={image} style={{ width: 200, height: 200 }} />}
+                                </View> */}
                             </View>
                             <View>
                                 <View>

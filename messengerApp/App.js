@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 
-
+import { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -35,24 +35,51 @@ import LoginForm from './src/components/LogInForm/LoginForm';
 
 const Stack = createNativeStackNavigator()
 const BottomTabs = createBottomTabNavigator()
+const DarkTheme = {
+  dark: true,
+  colors: {
+    primary: '#333',
+    background: '#222',
+    card: '#333',
+    text: '#fff',
+    border: '#333',
+  },
+};
+
+const LightTheme = {
+  dark: false,
+  colors: {
+    primary: '#fff',
+    background: '#fff',
+    card: '#fff',
+    text: '#333',
+    border: '#333',
+  },
+};
+
 
 const App = () => {
 
+
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+  const theme = isDarkTheme ? LightTheme : DarkTheme;
+
   return (
     <>
-      <NavigationContainer>
-        <Stack.Navigator screenOptions={{
+      <NavigationContainer theme={theme}>
+        <Stack.Navigator theme={theme} screenOptions={{
           headerShown: false
         }}>
 
-          <Stack.Screen name='LoginForm' component={LoginForm} />
+          <Stack.Screen theme={theme} name='LoginForm' component={LoginForm} />
           <Stack.Screen name="ScreensTabs" component={ScreensTabs}
 
           />
-          <Stack.Screen name="Header" component={Header}
+          <Stack.Screen theme={theme} name="Header" component={Header}
 
           />
-          <Stack.Screen name="FriendsMessages" component={FriendsMessages}
+          <Stack.Screen theme={theme} name="FriendsMessages" component={FriendsMessages}
             options={({ route }) => ({
               title: '',
               headerShown: true,
@@ -64,7 +91,7 @@ const App = () => {
             })}
           />
 
-          <Stack.Screen name="ProfileScreenDetails" component={ProfileScreenDetails}
+          <Stack.Screen theme={theme} name="ProfileScreenDetails" component={ProfileScreenDetails}
             options={{
               headerShown: true,
               title: ''
@@ -72,6 +99,8 @@ const App = () => {
           />
 
         </Stack.Navigator>
+
+
       </NavigationContainer >
     </>
 
